@@ -13,6 +13,7 @@
         <module>tung-core</module>
         <module>tung-web</module>
         <module>tung-redis</module>
+        <module>tung-markdown</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
