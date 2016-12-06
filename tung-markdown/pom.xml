@@ -25,7 +25,11 @@
             <artifactId>txtmark</artifactId>
             <version>0.13</version>
         </dependency>
-
+        <dependency>
+            <groupId>io.github.gitbucket</groupId>
+            <artifactId>markedj</artifactId>
+            <version>1.0.9</version>
+        </dependency>
 
     </dependencies>
 

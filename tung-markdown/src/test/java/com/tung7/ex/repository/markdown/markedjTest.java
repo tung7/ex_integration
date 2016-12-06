@@ -1,6 +1,8 @@
 package com.tung7.ex.repository.markdown;
 
 import com.github.rjeschke.txtmark.Processor;
+import io.github.gitbucket.markedj.Marked;
+import io.github.gitbucket.markedj.Options;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,15 +15,16 @@ import java.io.FileReader;
 /**
  * Created by Tung on 2016/12/5.
  */
-public class TxtmarkTest {
+//https://github.com/gitbucket/markedj
+public class MarkedjTest {
     long start;
 
     @Test
     public void testFile() {
         try {
             start = System.currentTimeMillis();
-            PegDownProcessor processor = new PegDownProcessor();
             String path = "d:\\uml_relation.md";
+//            String path = "d:\\detail_docker_study_note.md";
             File f = new File(path);
             FileReader fileReader = new FileReader(f);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -31,10 +34,11 @@ public class TxtmarkTest {
                 builder.append(s).append("\r\n");
                 s = bufferedReader.readLine();
             }
-            String result = Processor.process("[$PROFILE$]: extended\r\n" + builder.toString());
-//            System.out.println(processor.markdownToHtml(builder.toString()));
+            Options options = new  Options();
+            options.setLangPrefix("");
+            String result = Marked.marked(builder.toString(), options);
             System.out.println(result);
-            System.out.println("uses " + (System.currentTimeMillis() - start) + "ms");
+//            System.out.println("uses " + (System.currentTimeMillis() - start) + "ms");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -43,8 +47,12 @@ public class TxtmarkTest {
     @Test
     public void test() {
 //        String source = "[$PROFILE$]: extended \n ## Headline with ID ## {# headid}";
-        String source = "[$PROFILE$]: extended\n```\n# This is code!\n```";
-        String result = Processor.process(source);
+        String source = "[$PROFILE$]: extended\n```bash\n# This is code!\n```";
+        Options options = new  Options();
+        options.setSanitize(true);
+        options.setGfm(false);
+        options.setBreaks(true);
+        String result = Marked.marked(source, options);
         System.out.println(result);
     }
 
@@ -56,13 +64,13 @@ public class TxtmarkTest {
 
     @Before
     public void before() {
-        System.out.println("================ START ==================");
+//        System.out.println("================ START ==================");
 
     }
 
     @After
     public void after() {
-        System.out.println("================ END ==================");
+//        System.out.println("================ END ==================");
 
     }
 }
