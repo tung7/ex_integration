@@ -22,7 +22,14 @@
 
     <bean id="jedisFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" p:hostName="127.0.0.1" p:port="16379"/>
 
-    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate" p:connectionFactory-ref="jedisFactory" />
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate" p:connectionFactory-ref="jedisFactory" >
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+        </property>
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+        </property>
+    </bean>
 
 
 </beans>

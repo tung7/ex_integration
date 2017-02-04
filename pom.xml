@@ -14,11 +14,15 @@
         <module>tung-web</module>
         <module>tung-redis</module>
         <module>tung-markdown</module>
+        <module>tung-apns</module>
+        <module>tung-algorithm</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>4.2.5.RELEASE</spring.version>
         <hibernate.version>4.3.5.Final</hibernate.version>
+        <repository.version>1.0-SNAPSHOT</repository.version>
+        <logbackVersion>1.1.7</logbackVersion>
     </properties>
     <dependencies>
         <!-- Junit -->
@@ -83,9 +87,24 @@
             <classifier>jdk15</classifier>
         </dependency>
 
+
+        <!-- logback -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logbackVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-access</artifactId>
+            <version>${logbackVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logbackVersion}</version>
+        </dependency>
     </dependencies>
-
-
 
     <build>
         <plugins>
