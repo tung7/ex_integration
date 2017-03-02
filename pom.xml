@@ -16,6 +16,8 @@
         <module>tung-markdown</module>
         <module>tung-apns</module>
         <module>tung-algorithm</module>
+        <module>tung-mongo</module>
+        <module>tung-spring-boot</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,7 +25,24 @@
         <hibernate.version>4.3.5.Final</hibernate.version>
         <repository.version>1.0-SNAPSHOT</repository.version>
         <logbackVersion>1.1.7</logbackVersion>
+        <spring.mongo>1.9.5.RELEASE</spring.mongo>
+        <spring.redis>1.7.5.RELEASE</spring.redis>
+        <spring.boot.version>1.3.0.RELEASE</spring.boot.version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-mongodb</artifactId>
+                <version>${spring.mongo}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-redis</artifactId>
+                <version>${spring.redis}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <!-- Junit -->
         <dependency>
