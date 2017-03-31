@@ -1,7 +1,6 @@
 package com.tung7.ex.repository.base.utils;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -51,8 +50,9 @@ public class Utils {
         return md5.toString();
     }
 
-    public static void main(String[] args) {
-        ParentBean pb = new SubBean();
-        
+    public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
+        File f = new File(":\\555.ipa");
+        System.out.println(Utils.getMD5(new FileInputStream(f)));
+        System.out.println(Utils.getMD5(new FileInputStream(f)).length());
     }
 }
