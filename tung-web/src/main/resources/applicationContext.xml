@@ -48,7 +48,6 @@
 		</bean>
 
 
-		<import resource="classpath:appRedis-context.xml"></import>
 		<import resource="classpath:appAop-context.xml"></import>
 
 

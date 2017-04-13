@@ -1,7 +1,5 @@
-package com.tung7.ex.repository.base.utils.increaser;
+package com.tung7.ex.repository.redis.utils.increaser;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
@@ -13,16 +11,11 @@ import org.springframework.stereotype.Component;
  * @update
  */
 @Component
-public class MsgVersionIncreaser extends AbstractBaseRedisIncreaser {
-    private static Logger logger = LoggerFactory.getLogger(MsgVersionIncreaser.class);
-    private static final String KEY = "msg_version";
+public class UserMsgVersionIncreaser extends AbstractBaseRedisIncreaser {
+    private static final String PREFIX = "msg_version_";
 
     @Autowired
-    RedisTemplate<String, String> template;
-
-    public void setTemplate(RedisTemplate<String, String> template) {
-        this.template = template;
-    }
+    RedisTemplate template;
 
     @Override
     protected RedisTemplate getRedisTemplate() {
@@ -42,7 +35,7 @@ public class MsgVersionIncreaser extends AbstractBaseRedisIncreaser {
      * 获取下一个序列，步进为1
      * @return
      */
-    public long getNextMsgVersion() throws Exception {
-        return next(KEY, 1);
+    public long getNextUserMsgVersion(Long userid) throws Exception {
+        return next(PREFIX+userid, 1);
     }
 }

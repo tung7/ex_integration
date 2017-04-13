@@ -1,4 +1,4 @@
-package com.tung7.ex.repository.base.utils.increaser.service;
+package com.tung7.ex.repository.redis.utils.increaser.service;
 
 /**
  * @author Tung

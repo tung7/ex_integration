@@ -1,4 +1,4 @@
-package com.tung7.ex.repository.base.utils.increaser;
+package com.tung7.ex.repository.redis.utils.increaser;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

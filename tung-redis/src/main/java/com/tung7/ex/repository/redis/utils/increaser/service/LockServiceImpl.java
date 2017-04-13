@@ -1,7 +1,7 @@
-package com.tung7.ex.repository.base.utils.increaser.service;
+package com.tung7.ex.repository.redis.utils.increaser.service;
 
-import com.tung7.ex.repository.base.utils.increaser.MsgVersionIncreaser;
-import com.tung7.ex.repository.base.utils.increaser.UserMsgVersionIncreaser;
+import com.tung7.ex.repository.redis.utils.increaser.MsgVersionIncreaser;
+import com.tung7.ex.repository.redis.utils.increaser.UserMsgVersionIncreaser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
