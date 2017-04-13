@@ -21,7 +21,7 @@ public class TestToDel {
     @Value("${JAVA_HOME}")
     String javaHome;
 
-    @Value("${jvm_num}")
+//    @Value("${jvm_num}")
     int JvmNum;
 
     @Value("${test_value2}")

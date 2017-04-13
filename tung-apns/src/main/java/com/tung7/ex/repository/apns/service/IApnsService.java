@@ -1,4 +1,4 @@
-package com.tung7.ex.repository.web.service;
+package com.tung7.ex.repository.apns.service;
 
 /**
  * @author Tung

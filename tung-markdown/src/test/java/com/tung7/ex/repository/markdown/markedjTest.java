@@ -1,20 +1,15 @@
 package com.tung7.ex.repository.markdown;
 
-import com.github.rjeschke.txtmark.Processor;
 import io.github.gitbucket.markedj.Marked;
 import io.github.gitbucket.markedj.Options;
-import net.sf.json.JSONObject;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.pegdown.PegDownProcessor;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by Tung on 2016/12/5.
@@ -45,8 +40,8 @@ public class MarkedjTest {
         s = sb.toString();
         System.out.println(s);
         MetaInfo metaInfo = parseMeta(s);
-        JSONObject object = JSONObject.fromObject(metaInfo);
-        System.out.println(object.toString());
+//        JSONObject object = JSONObject.fromObject(metaInfo);
+//        System.out.println(object.toString());
         return true;
     }
 

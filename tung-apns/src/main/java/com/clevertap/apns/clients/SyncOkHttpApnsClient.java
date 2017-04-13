@@ -33,7 +33,6 @@ package com.clevertap.apns.clients;
 import com.clevertap.apns.*;
 import com.clevertap.apns.internal.Constants;
 import com.clevertap.apns.internal.JWT;
-import net.sf.json.JSONObject;
 import okhttp3.*;
 import okio.BufferedSink;
 

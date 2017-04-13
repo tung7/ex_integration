@@ -19,7 +19,7 @@ import java.util.Random;
  * Created by Tung on 2016/12/3.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:appRedisContext.xml")
+@ContextConfiguration(locations = "classpath:appRedis-context.xml")
 public class RedisQueueTest {
     @Autowired
     RedisTemplate<String, String> template;

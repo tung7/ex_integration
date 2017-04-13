@@ -26,26 +26,17 @@
 		    <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />-->
 		    <!--<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />-->
 		<!--</context:component-scan>-->
-		<bean id="jedisFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" p:hostName="127.0.0.1" p:port="16379"/>
 
-		<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate" p:connectionFactory-ref="jedisFactory" >
-			<property name="keySerializer">
-				<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
-			</property>
-			<property name="valueSerializer">
-				<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
-			</property>
-		</bean>
 
 		<!--<context:property-placeholder location="app.properties"/>-->
-<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
-	<property name="locations" >
-		<list>
-			<value>app.properties</value>
-			<value>app2.properties</value>
-		</list>
-	</property>
-</bean>
+		<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+			<property name="locations" >
+				<list>
+					<value>classpath:app.properties</value>
+					<value>classpath:app2.properties</value>
+				</list>
+			</property>
+		</bean>
 
 		<bean id="testToDel" class="com.tung7.ex.repository.web.util.TestToDel"></bean>
 
@@ -55,5 +46,10 @@
 		<bean id="testBean" class="com.tung7.ex.repository.web.util.TestBean">
 			<property name="name" value="abc"/>
 		</bean>
+
+
+		<import resource="classpath:appRedis-context.xml"></import>
+
+
 	</beans>
 </beans>

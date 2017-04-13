@@ -1,9 +1,7 @@
-package com.tung7.ex.repository.web.service.impl;
+package com.tung7.ex.repository.base.utils.increaser.service;
 
-import com.sun.org.apache.xpath.internal.NodeSet;
 import com.tung7.ex.repository.base.utils.increaser.MsgVersionIncreaser;
 import com.tung7.ex.repository.base.utils.increaser.UserMsgVersionIncreaser;
-import com.tung7.ex.repository.web.service.ILockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

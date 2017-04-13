@@ -5,8 +5,6 @@ import com.clevertap.apns.Notification;
 import com.clevertap.apns.NotificationResponse;
 import com.clevertap.apns.NotificationResponseListener;
 import com.clevertap.apns.clients.ApnsClientBuilder;
-import net.sf.json.JSONObject;
-import okhttp3.internal.Util;
 import org.junit.Test;
 
 import java.io.FileInputStream;
@@ -72,7 +70,7 @@ public class ApnsTest {
                     client.push(n, new NotificationResponseListener() {
                         @Override
                         public void onSuccess(Notification notification) {
-                            System.out.println("success! : " + JSONObject.fromObject(notification).toString());
+//                            System.out.println("success! : " + JSONObject.fromObject(notification).toString());
                             System.out.println("all Used: " + (System.currentTimeMillis() - allBefore) + "ms");
                         }
 

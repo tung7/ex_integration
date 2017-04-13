@@ -9,38 +9,25 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>tung-apns</artifactId>
+    <artifactId>tung-json</artifactId>
 
     <dependencies>
-
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
             <version>2.7.0</version>
         </dependency>
-
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.7.0</version>
         </dependency>
-
         <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-            <version>3.2.0</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.7.0</version>
         </dependency>
 
-
-        <dependency>
-            <groupId>com.tung7.ex</groupId>
-            <artifactId>tung-base</artifactId>
-            <version>${repository.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.tung7.ex</groupId>
-            <artifactId>tung-core</artifactId>
-            <version>${repository.version}</version>
-        </dependency>
     </dependencies>
+
 </project>

@@ -1,4 +1,4 @@
-package com.tung7.ex.repository.web.service.impl;
+package com.tung7.ex.repository.apns.service.impl;
 
 import com.clevertap.apns.ApnsClient;
 import com.clevertap.apns.Notification;
@@ -6,8 +6,7 @@ import com.clevertap.apns.NotificationResponse;
 import com.clevertap.apns.NotificationResponseListener;
 import com.clevertap.apns.clients.ApnsClientBuilder;
 import com.tung7.ex.repository.apns.ApnsAuthTokenBean;
-import com.tung7.ex.repository.web.service.IApnsService;
-import net.sf.json.JSONObject;
+import com.tung7.ex.repository.apns.service.IApnsService;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +36,8 @@ public class ApnsServiceImpl implements IApnsService, InitializingBean {
                 .sound("msg.mp3")
                 .alertBody(msg).build();
         NotificationResponse response =  syncClient.push(n);
-        return JSONObject.fromObject(response).toString();
+//        return JSONObject.fromObject(response).toString();
+        return "test";
     }
 
     public void pushInAsync(String msg) {
@@ -50,11 +50,11 @@ public class ApnsServiceImpl implements IApnsService, InitializingBean {
         asyncClient.push(n, new NotificationResponseListener() {
             @Override
             public void onSuccess(Notification notification) {
-                System.out.println("success! : " + JSONObject.fromObject(notification.getPayload()) + ", Used " + (System.currentTimeMillis() - start) +  "ms");
+//                System.out.println("success! : " + JSONObject.fromObject(notification.getPayload()) + ", Used " + (System.currentTimeMillis() - start) +  "ms");
             }
             @Override
             public void onFailure(Notification notification, NotificationResponse nr) {
-                System.out.println("failure! : " + JSONObject.fromObject(notification.getPayload()) + ", Used " + (System.currentTimeMillis() - start) +  "ms");
+//                System.out.println("failure! : " + JSONObject.fromObject(notification.getPayload()) + ", Used " + (System.currentTimeMillis() - start) +  "ms");
             }
         });
     }

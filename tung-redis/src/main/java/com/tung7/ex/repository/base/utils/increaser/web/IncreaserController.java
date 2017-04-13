@@ -1,6 +1,6 @@
-package com.tung7.ex.repository.web.rest;
+package com.tung7.ex.repository.base.utils.increaser.web;
 
-import com.tung7.ex.repository.web.service.ILockService;
+import com.tung7.ex.repository.base.utils.increaser.service.ILockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
