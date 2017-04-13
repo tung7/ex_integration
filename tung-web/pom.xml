@@ -35,6 +35,11 @@
             <artifactId>tung-redis</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.tung7.ex</groupId>
+            <artifactId>tung-aop</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
     </dependencies>
 
