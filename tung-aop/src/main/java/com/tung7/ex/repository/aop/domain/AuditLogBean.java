@@ -19,77 +19,96 @@ public class AuditLogBean {
     private String description;
     private String ip;
     private String type;
+    private boolean status;
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public AuditLogBean setStatus(boolean status) {
+        this.status = status;
+        return this;
+    }
 
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public AuditLogBean setType(String type) {
         this.type = type;
+        return this;
     }
 
     public String getIp() {
         return ip;
     }
 
-    public void setIp(String ip) {
+    public AuditLogBean setIp(String ip) {
         this.ip = ip;
+        return this;
     }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public AuditLogBean setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public AuditLogBean setDescription(String description) {
         this.description = description;
+        return this;
     }
 
     public String getLoginName() {
         return loginName;
     }
 
-    public void setLoginName(String loginName) {
+    public AuditLogBean setLoginName(String loginName) {
         this.loginName = loginName;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public AuditLogBean setName(String name) {
         this.name = name;
+        return this;
     }
 
     public Long getOperationTime() {
         return operationTime;
     }
 
-    public void setOperationTime(Long operationTime) {
+    public AuditLogBean setOperationTime(Long operationTime) {
         this.operationTime = operationTime;
+        return  this;
     }
 
     public String getModule() {
         return module;
     }
 
-    public void setModule(String module) {
+    public AuditLogBean setModule(String module) {
         this.module = module;
+        return this;
     }
 
     public Terminal getTerminal() {
         return terminal;
     }
 
-    public void setTerminal(Terminal terminal) {
+    public AuditLogBean setTerminal(Terminal terminal) {
         this.terminal = terminal;
+        return this;
     }
 
     @Override
@@ -103,6 +122,8 @@ public class AuditLogBean {
                 ", terminal=" + terminal +
                 ", description='" + description + '\'' +
                 ", ip='" + ip + '\'' +
+                ", type='" + type + '\'' +
+                ", status=" + status +
                 '}';
     }
 

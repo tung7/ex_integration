@@ -26,14 +26,35 @@ public class AuditTestController {
         return auditTestService.deleteAllRole();
     }
 
-    @RequestMapping("/audit/custom_anno/update_role/{rid}")
+    @RequestMapping("/audit/custom_anno/v1/update_role/{rid}")
     @ResponseBody
     public String updateRole(@PathVariable("rid") Long rid) {
         return auditTestService.update(rid);
     }
-    @RequestMapping("/audit/custom_anno/update_user/{uid}")
+
+    @RequestMapping("/audit/custom_anno/v1/update_user/{uid}")
     @ResponseBody
     public String updateUser(@PathVariable("uid") int uid) {
-        return auditTestService.update(uid);
+        String rtn = "nothing";
+        System.out.println("v1");
+        try {
+            rtn = auditTestService.update(uid);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rtn;
+    }
+
+    @RequestMapping("/audit/custom_anno/v2/update_user/{uid}")
+    @ResponseBody
+    public String updateUser(@PathVariable("uid") Integer uid) {
+        String rtn = "nothing";
+        System.out.println("v2");
+        try {
+            rtn = auditTestService.update(uid);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rtn;
     }
 }
