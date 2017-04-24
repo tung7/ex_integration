@@ -12,6 +12,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -43,9 +44,17 @@ public class AuditLogAspect {
 
     @AfterThrowing(value = "serviceLogAspect()", throwing="throwable")
     public void doLog(JoinPoint joinPoint, Throwable throwable) {
-        System.out.println(throwable.getClass());
+
+
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         try {
+//            String targetName = joinPoint.getTarget().getClass().getName(); //目标类名
+//            Class targetClass = Class.forName(targetName); // 目标类
+//            if (!targetClass.isAnnotationPresent(Service.class)) {
+//
+//
+//            }
+
             //数据库日志
             Map<String, String> rtn = getAnnoArgs(joinPoint);
             AuditLogBean bean =  new AuditLogBean();

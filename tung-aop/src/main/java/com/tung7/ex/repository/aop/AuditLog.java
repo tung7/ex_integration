@@ -14,6 +14,11 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface AuditLog {
+    String OPT_LEVEL = "optLevel";
+    String SAFT_LEVEL = "saveLevel";
+
     String description();
     String type();
+    String trueWhen() default "";
+
 }

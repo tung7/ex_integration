@@ -21,12 +21,10 @@ public class AuditTestService {
         return "hahah delete";
     }
 
-    @AuditLog(type = "1", description = "更新角色")
     public String update(Long rid) {
         return "hahah updateRole";
     }
 
-    @AuditLog(type = "1", description = "更新用户")
     public String update(long rid) {
         if (rid == 0) {
             throw new IllegalArgumentException("参数错误，不能为0");
