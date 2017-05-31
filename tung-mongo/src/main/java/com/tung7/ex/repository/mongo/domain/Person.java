@@ -1,4 +1,4 @@
-package com.tung7.ex.repository.mongo;
+package com.tung7.ex.repository.mongo.domain;
 
 /**
  * TODO Fill The Description!

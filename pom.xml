@@ -21,11 +21,14 @@
         <module>tung-application</module>
         <module>tung-json</module>
         <module>tung-aop</module>
+        <module>tung-xml</module>
+        <module>tung-poi</module>
+        <module>tung-concurrecy</module>
     </modules>
     <properties>
         <project.version>1.0-SNAPSHOT</project.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.2.5.RELEASE</spring.version>
+        <spring.version>4.3.8.RELEASE</spring.version>
         <hibernate.version>4.3.5.Final</hibernate.version>
         <repository.version>1.0-SNAPSHOT</repository.version>
         <logbackVersion>1.1.7</logbackVersion>
@@ -34,6 +37,12 @@
         <spring.boot.version>1.5.2.RELEASE</spring.boot.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>3.0-alpha-1</version>
+            <scope>provided</scope>
+        </dependency>
         <!-- Junit -->
         <dependency>
             <groupId>junit</groupId>

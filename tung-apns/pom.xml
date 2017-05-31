@@ -31,6 +31,12 @@
             <version>3.2.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.notnoop.apns</groupId>
+            <artifactId>apns</artifactId>
+            <version>1.0.0.Beta6</version>
+        </dependency>
+
 
         <dependency>
             <groupId>com.tung7.ex</groupId>

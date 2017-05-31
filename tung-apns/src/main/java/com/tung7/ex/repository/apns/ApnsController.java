@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author Tung
@@ -17,12 +18,15 @@ public class ApnsController {
    @Autowired
    IApnsService apnsService;
 
-
-
-
     @RequestMapping(value = "apns-test",method = RequestMethod.GET)
     public String testUI() {
         return "testUI";
+    }
+
+    @RequestMapping(value = "apns",method = RequestMethod.GET)
+    @ResponseBody
+    public String apns() {
+        return "aaaaaaaaaaaaaaaaaaa___________---new";
     }
 
     @RequestMapping(value = "apns-test",method = RequestMethod.POST)

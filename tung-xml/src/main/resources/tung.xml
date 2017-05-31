@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <type name="safe">
+        <module name="安全管理">
+            <mapping>
+                <url></url>
+                <description></description>
+            </mapping>
+            <mapping>
+
+            </mapping>
+        </module>
+        <module name="应用管理"></module>
+    </type>
+    <type name="opt">
+        <module name="安全管理"></module>
+        <module name="应用商店"></module>
+    </type>
+</root>
