@@ -51,8 +51,13 @@ public class Utils {
     }
 
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
-        File f = new File("f:\\sss.apk");
-        System.out.println(Utils.getMD5(new FileInputStream(f)));
+
+        File f = new File("f:\\jar\\ooxml-schemas-1.3.jar");
+        System.out.println(Utils.getMD5(new FileInputStream(f))); //d0cb04df571c58123d8cf1275a422d9c --
+
+        f = new File("f:\\jar\\ooxml-schemas-1.3.jar");
+        System.out.println(Utils.getMD5(new FileInputStream(f))); //b31211dcf8186f502b0ebd5b6b64eb5e --
+
         System.out.println(Utils.getMD5(new FileInputStream(f)).length());
     }
 }

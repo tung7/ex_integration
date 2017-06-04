@@ -17,19 +17,18 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class FilterFromServerByTimeApp {
-    public static ExecutorService es = Executors.newFixedThreadPool(15);
+    public static final ExecutorService ES = Executors.newFixedThreadPool(15);
 
     public static List<String> getFilesFromList(File f) throws IOException {
         List<String> fileList = new ArrayList<String>();
-        FileReader reader = new FileReader(f);
-        BufferedReader bf = new BufferedReader(reader);
+        BufferedReader bf = new BufferedReader(new FileReader(f));
 
         String line = null;
         while((line = bf.readLine()) != null) {
             fileList.add(line);
         }
 
-
+        bf.close();
         return fileList;
     }
     /**
@@ -65,7 +64,7 @@ public class FilterFromServerByTimeApp {
 
         final String disPath = cpDist.getAbsolutePath();
         for(final String f  : fileList) {
-            es.submit( new Runnable() {
+            ES.submit( new Runnable() {
                 @Override
                 public void run() {
                     Process process = null;
@@ -90,8 +89,8 @@ public class FilterFromServerByTimeApp {
 
         }
         System.out.println("[DEBUG] - COPY文件 end");
-        es.shutdown();
-        es.awaitTermination(1000, TimeUnit.SECONDS);
+        ES.shutdown();
+        ES.awaitTermination(1000, TimeUnit.SECONDS);
     }
 
     public static String pwd() {
