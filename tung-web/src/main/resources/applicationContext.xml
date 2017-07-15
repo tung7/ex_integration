@@ -50,6 +50,7 @@
 
 		<import resource="classpath:appAop-context.xml"></import>
 
-
+		<bean class="com.tung7.ex.repository.web.RewriteHandlerMapping"></bean>
+		<bean id="rewriteHandler" class="com.tung7.ex.repository.web.RewriteHandler"></bean>
 	</beans>
 </beans>
