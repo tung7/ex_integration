@@ -22,7 +22,7 @@ import java.util.concurrent.Executors;
 public class TcpRedirectController {
     private transient static Logger log = LoggerFactory.getLogger(TcpRedirectController.class);
     public static ExecutorService clientDetector = Executors.newSingleThreadExecutor();
-    public static  boolean detectorRunning = true;
+    public static volatile boolean detectorRunning = true;
 
     private static class Task implements Runnable{
         private Socket socket;

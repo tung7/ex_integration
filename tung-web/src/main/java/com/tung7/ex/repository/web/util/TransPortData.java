@@ -1,16 +1,14 @@
 package com.tung7.ex.repository.web.util;
 
-import com.tung7.ex.repository.web.rest.TcpRedirectController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
-import java.util.concurrent.TimeUnit;
 
 /**
- * TODO Fill The Description!
+ * 转发数据的封装
  *
  * @author Tung
  * @version 1.0

@@ -1,5 +1,9 @@
 package com.tung7.ex.repository.web.util;
 
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
 /**
  * TODO Fill The Description!
  *
@@ -9,7 +13,7 @@ package com.tung7.ex.repository.web.util;
  * @update
  */
 
-public class TestBean {
+public class TestBean{
     private String name;
 
     public String getName() {
@@ -19,4 +23,5 @@ public class TestBean {
     public void setName(String name) {
         this.name = name;
     }
+
 }
