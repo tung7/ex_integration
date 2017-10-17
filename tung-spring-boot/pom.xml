@@ -9,17 +9,37 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <properties>
-        <java.version>1.7</java.version>
+        <java.version>1.8</java.version>
     </properties>
 
     <artifactId>tung-spring-boot</artifactId>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>1.5.2.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-parent</artifactId>
-            <version>${spring.boot.version}</version>
-            <type>pom</type>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-parent</artifactId>-->
+            <!--<version>${spring.boot.version}</version>-->
+            <!--<type>pom</type>-->
+            <!--<scope>import</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+           <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-dependencies</artifactId>-->
+            <!--<version>${spring.boot.version}</version>-->
+            <!--<type>pom</type>-->
+            <!--<scope>import</scope>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -35,13 +55,17 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <!--<configuration>-->
+                    <!--<fork>true</fork>-->
+                    <!--<mainClass>com.tung7.ex.repository.springboot.Application</mainClass>-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<goals>-->
+                            <!--<goal>repackage</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
             </plugin>
         </plugins>
     </build>

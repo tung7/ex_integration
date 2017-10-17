@@ -35,7 +35,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Serializable;
-import java.net.URLDecoder;
+import java.net.*;
 import java.security.*;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -48,6 +48,29 @@ import java.util.*;
  * @update
  */
 public class ProcessTest {
+    @Test
+    public void testAddress() {
+        try {
+            String spec = "tcp://192.168.8.16:1883/";
+            URI uri = new URI(spec);
+            System.out.println(uri.getScheme());
+            System.out.println(uri.getHost());
+            System.out.println(uri.getPort());
+            System.out.println(uri.getPath());
+            System.out.println("===============================");
+            URL u = new URL(spec);
+            System.out.println(u.getProtocol());
+            System.out.println(u.getHost());
+            System.out.println(u.getPort());
+            System.out.println(u.getPath());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
     @Test
     public void testArray() {

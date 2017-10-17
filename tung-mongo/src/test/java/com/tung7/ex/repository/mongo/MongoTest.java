@@ -1,8 +1,7 @@
 package com.tung7.ex.repository.mongo;
 
 import com.mongodb.*;
-import com.mongodb.gridfs.GridFS;
-import com.mongodb.gridfs.GridFSFile;
+import com.tung7.ex.repository.mongo.domain.Person;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +15,7 @@ import java.util.List;
 import static org.springframework.data.mongodb.core.query.Criteria.where;
 
 /**
- * TODO Complete The Description!
+ * TODO Fill The Description!
  *
  * @author Tung
  * @version 1.0

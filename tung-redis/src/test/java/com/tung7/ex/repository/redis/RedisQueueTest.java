@@ -1,5 +1,6 @@
 package com.tung7.ex.repository.redis;
 
+import com.tung7.ex.repository.redis.configuration.PropertiesHandleConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ import java.util.Random;
  * Created by Tung on 2016/12/3.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:appRedisContext.xml")
+@ContextConfiguration(classes = PropertiesHandleConfig.class)
 public class RedisQueueTest {
     @Autowired
     RedisTemplate<String, String> template;

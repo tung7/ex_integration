@@ -19,8 +19,15 @@
         <module>tung-mongo</module>
         <module>tung-spring-boot</module>
         <module>tung-qiniu</module>
+        <module>tung-application</module>
+        <module>tung-json</module>
+        <module>tung-aop</module>
+        <module>tung-xml</module>
+        <module>tung-poi</module>
+        <module>tung-concurrecy</module>
     </modules>
     <properties>
+        <project.version>1.0-SNAPSHOT</project.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>4.2.5.RELEASE</spring.version>
         <hibernate.version>4.3.5.Final</hibernate.version>

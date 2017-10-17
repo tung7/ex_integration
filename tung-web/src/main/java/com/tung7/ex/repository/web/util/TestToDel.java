@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import javax.annotation.Resource;
 
 /**
- * TODO Complete The Description!
+ * TODO Fill The Description!
  *
  * @author Tung
  * @version 1.0
@@ -21,7 +21,7 @@ public class TestToDel {
     @Value("${JAVA_HOME}")
     String javaHome;
 
-    @Value("${jvm_num}")
+//    @Value("${jvm_num}")
     int JvmNum;
 
     @Value("${test_value2}")

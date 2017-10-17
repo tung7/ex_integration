@@ -6,7 +6,8 @@
 		</encoder>
 	</appender>
 	<logger name="com.tung.ex.repository.base.utils.increaser" level="ERROR" additivity="true" />
-	<root level="ERROR">
+	<logger name="org.springframework.web" level="TRACE" additivity="true" />
+	<root level="DEBUG">
 		<appender-ref ref="STDOUT" />
 	</root>
 </configuration>

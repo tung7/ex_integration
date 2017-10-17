@@ -22,30 +22,21 @@
     <description>Spring公共配置</description>
     <beans>
 		<!-- 使用annotation 自动注册bean, 并保证@Required、@Autowired的属性被注入 -->
-		<context:component-scan base-package="com.tung7" />
-		    <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />-->
-		    <!--<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />-->
-		<!--</context:component-scan>-->
-		<bean id="jedisFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" p:hostName="127.0.0.1" p:port="16379"/>
-
-		<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate" p:connectionFactory-ref="jedisFactory" >
-			<property name="keySerializer">
-				<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
-			</property>
-			<property name="valueSerializer">
-				<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
-			</property>
-		</bean>
+		<context:component-scan base-package="com.tung7.ex" >
+		    <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+		    <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+		</context:component-scan>
+		<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 
 		<!--<context:property-placeholder location="app.properties"/>-->
-<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
-	<property name="locations" >
-		<list>
-			<value>app.properties</value>
-			<value>app2.properties</value>
-		</list>
-	</property>
-</bean>
+		<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+			<property name="locations" >
+				<list>
+					<value>classpath:app.properties</value>
+					<value>classpath:app2.properties</value>
+				</list>
+			</property>
+		</bean>
 
 		<bean id="testToDel" class="com.tung7.ex.repository.web.util.TestToDel"></bean>
 
@@ -55,5 +46,11 @@
 		<bean id="testBean" class="com.tung7.ex.repository.web.util.TestBean">
 			<property name="name" value="abc"/>
 		</bean>
+
+
+		<import resource="classpath:appAop-context.xml"></import>
+
+		<bean class="com.tung7.ex.repository.web.RewriteHandlerMapping"></bean>
+		<bean id="rewriteHandler" class="com.tung7.ex.repository.web.RewriteHandler"></bean>
 	</beans>
 </beans>
