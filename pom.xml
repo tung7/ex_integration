@@ -24,6 +24,7 @@
         <module>tung-xml</module>
         <module>tung-poi</module>
         <module>tung-concurrecy</module>
+        <module>tung-rabbitmq</module>
     </modules>
     <properties>
         <project.version>1.0-SNAPSHOT</project.version>
