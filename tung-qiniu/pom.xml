@@ -23,6 +23,4 @@
             <version>${repository.version}</version>
         </dependency>
     </dependencies>
-
-
 </project>
