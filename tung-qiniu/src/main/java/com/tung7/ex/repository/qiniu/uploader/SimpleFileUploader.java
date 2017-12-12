@@ -5,18 +5,12 @@ import com.qiniu.storage.Configuration;
 import com.qiniu.storage.UploadManager;
 import com.tung7.ex.repository.base.utils.Utils;
 import com.tung7.ex.repository.qiniu.generator.UploadTokenGenerator;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 
-/**
- *
- *
- * @author Tung
- * @version 1.0
- * @date 2017/10/18.
- * @update
- */
 
 public class SimpleFileUploader {
     private static final String IMG = "E:\\Tung\\Pictures\\Saved Pictures\\291585-106.jpg"; // image/jpeg
@@ -26,20 +20,17 @@ public class SimpleFileUploader {
 
     private static final String FILE_PATH = DOCX;
 
-    public Response upload(File file) throws Exception {
+    public static Response upload(File file) throws Exception {
         String key = Utils.getMD5(new FileInputStream(file));
         String uploadToken = UploadTokenGenerator.generate();
         UploadManager uploadManager = new UploadManager(new Configuration());
-        return uploadManager.put(file, key, uploadToken);
+        return uploadManager.put(file, key+"/"+file.getName(), uploadToken);
     }
 
-
-    //test
     public static void main(String[] args) throws Exception {
-        File file = new File(FILE_PATH);
-
-        Response r = new SimpleFileUploader().upload(file);
-        System.out.println(r.bodyString());
+        File f= new File(IMG);
+        Response upload = upload(f);
+        System.out.println(upload.bodyString());
     }
 
 }
