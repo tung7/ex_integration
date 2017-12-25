@@ -26,6 +26,8 @@
         <module>tung-concurrecy</module>
         <module>tung-rabbitmq</module>
         <module>tung-qiniu</module>
+        <module>tung-foundation</module>
+        <module>tung-pattern</module>
     </modules>
     <properties>
         <project.version>1.0-SNAPSHOT</project.version>
