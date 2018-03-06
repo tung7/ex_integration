@@ -17,7 +17,6 @@
         <module>tung-apns</module>
         <module>tung-algorithm</module>
         <module>tung-mongo</module>
-        <module>tung-spring-boot</module>
         <module>tung-application</module>
         <module>tung-json</module>
         <module>tung-aop</module>
