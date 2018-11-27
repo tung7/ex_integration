@@ -27,11 +27,12 @@
         <module>tung-qiniu</module>
         <module>tung-foundation</module>
         <module>tung-pattern</module>
+        <module>tung-nio</module>
     </modules>
     <properties>
         <project.version>1.0-SNAPSHOT</project.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.3.7.RELEASE</spring.version>
+        <spring.version>4.3.18.RELEASE</spring.version>
         <hibernate.version>4.3.5.Final</hibernate.version>
         <repository.version>1.0-SNAPSHOT</repository.version>
         <logbackVersion>1.1.7</logbackVersion>
